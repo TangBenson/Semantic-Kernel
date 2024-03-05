@@ -6,21 +6,25 @@ namespace console.beta;
 
 public class Program
 {
-    protected Program()
-    {
-    }
     public static async Task Main(string[] args)
     {
-        //Azure OpenAI 服務資訊 
-        var DeployName = "👉模型佈署名稱👈";
-        var Endpoint = "https://👉API端點👈.openai.azure.com/";
-        var ApiKey = "👉ApiKey👈";
+        //OpenAI 服務資訊 
+        var modelId = "gpt-4";
+        var ApiKey = "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";
 
-        // 建立 kernel builder, 掛上 Azure OpenAI
+        // 建立 kernel builder, 掛上 OpenAI
         var builder = Kernel.CreateBuilder()
-                    .AddAzureOpenAIChatCompletion(DeployName, Endpoint, ApiKey);
-        builder.Plugins.AddFromType<LightPlugin>(); // 將 LightPlugin 加入 Kernel
+                    .AddOpenAIChatCompletion(modelId, ApiKey);
+
+        // 將 LightPlugin 加入 Kernel
+        builder.Plugins.AddFromType<LightPlugin>();
         Kernel kernel = builder.Build();
+
+
+
+
+
+
 
         // 建立 chat history 物件，並且加入系統提示訊息(System Prompt)
         var history = new ChatHistory();
