@@ -1,0 +1,30 @@
+name: Login
+template: |
+  判斷下列內容是否包含帳號(純數字)及密碼(純英文)資訊，
+  若有提供則呼叫"""HolidayPlugin"""判斷正確與否。
+  {{$topic}}
+template_format: semantic-kernel
+description: 判斷使用者是否輸入帳號及密碼
+input_variables:
+  - name: topic
+    description: 使用者提供的內容
+    is_required: true
+execution_settings:
+  service1:
+    model_id: gpt-4
+    temperature: 0.6
+
+
+# template: |
+#   判斷下列內容是否包含帳號(純數字)及密碼(純英文)資訊，
+#   若有提供則呼叫"""HolidayPlugin"""判斷正確與否。
+#   若正確，回覆內容只要帳號資訊(純數字)
+#   若錯誤，回覆內容只要0
+#   {{$topic}}
+
+# template: |
+#   判斷下列內容是否包含帳號(純數字)及密碼(純英文)資訊，
+#   若有提供則呼叫"""HolidayPlugin"""判斷正確與否，
+#   若正確則回傳帳號資訊(數字)。若不正確則回傳空字串，不要告訴我其它的資訊。
+#   {{$topic}}
+# description: 判斷使用者是否輸入帳號及密碼，若沒提供登入資訊則要求使用者告知帳號及密碼
