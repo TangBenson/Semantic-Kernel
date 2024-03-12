@@ -10,7 +10,7 @@ public class Program
     {
         //OpenAI 服務資訊 
         var modelId = "gpt-4";
-        var ApiKey = "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";
+        var ApiKey = "sk-";
 
         // 建立 kernel builder, 掛上 OpenAI
         var builder = Kernel.CreateBuilder()

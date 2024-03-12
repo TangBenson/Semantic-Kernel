@@ -6,7 +6,7 @@ using sk.core.Plugins.HolidayPlugin;
 
 
 var modleId = "gpt-4";
-var ApiKey = "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";
+var ApiKey = "sk-";
 string currentDirectory = Directory.GetCurrentDirectory();
 
 Kernel kernel = Kernel.CreateBuilder()
